@@ -1,6 +1,5 @@
 # Recommendation System
 
-- 
 ### Tổng quang về Recommendation System
 - Recommend dựa trên đánh giá của người dùng
 - Recommend dựa trên thể loại của phim
