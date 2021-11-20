@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>MAICO MOVIES</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap');
+        body  {
+            font-family: 'Comfortaa', cursive;
+            background-color: #1c232b !important;
+        }
+        .nav-top {
+            background-color: #41484e !important;
+            color:white;
+            padding:20px;
+        }
+        .body-page{
+            padding:40px;
+        }
+        .body-page h2{
+            color:white
+        }
+        .body-page a{
+            text-decoration: none !important;
+            color:white ;
+            transition: .2s all;
+        }
+        .body-page a:hover{
+            color:#00b8ff !important;
+        }
+        .genres-list {
+            color:white;
+
+        }
+        .genres-list ul {
+            list-style-type: none;
+            padding:0;
+        }
+        .genres-list ul li {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="nav-top">
+        <h2>MAICO MOVIES</h2>
+    </div>
+    <div class="body-page">
+        <div class="genres-list">
+            <h2>Genres List</h2>
+            <ul>
+                {% for genre in genres %}
+                    <li>
+                        <a href={{ genre.path }}>
+                            <button type="button" class="btn btn-warning">{{ genre.genre }}</button>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <h2>Movies List</h2>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Genres</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                    <tr>
+                        <th scope="row">{{ item.id }}</th>
+                        <td><a href={{ item.path }}>{{ item.title }}</a></td>
+                        <td>
+                            {% for genre in item.genres %}
+                                <a href={{ genre.path }}>
+                                    <button type="button" class="btn btn-primary">
+                                        {{ genre.genre }}
+                                    </button>
+                                </a>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
