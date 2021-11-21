@@ -24,31 +24,29 @@ Mở thư mục hiện tại và làm các bước sau
 
 ```sh
 cd clearn_data
-python rating.py
-python genre.py
-python movies.py
+python main.py
 ```
 Sau đó chúng ta sẽ thu được các file sau:
 ```sh
-list_genres.json   # Dùng để lưu lại các thể loại của phim
-movies.json        # Dùng để lưu các thông tin và url của phim
-neighbors.npy      # File numpy sau khi đã sắp xếp các bộ phim có cùng thể loại
-rating.npy         # File numpy sau khi đã sắp xếp lượt đánh giá gần bằng nhau
+genres_contents.json   # Dùng để lưu lại các thể loại của phim
+genres_neighbors.npy   # Dùng để lưu các bộ phim có cùng các thể loại
+movies_contents.json   # Dùng để lưu lại thông tin các bộ phim
+rating_neighbors.npy   # Dùng để lưu các bộ phim có các lượt đánh giá gần bằng nhau
 ```
 Tiếp tục duy chuyển các file vừa thu được vào thư mục Website
 Trên windows:
 ```sh
-move ./list_genres.json ../Website/data
-move ./movies.json ../Website/data
-move ./neighbors.npy ../Website/data
-move ./rating.npy ../Website/data
+move ./genres_contents.json ../Website/data
+move ./genres_neighbors.npy ../Website/data
+move ./movies_contents.json ../Website/data
+move ./rating_neighbors.npy ../Website/data
 ```
 Trên linux:
 ```sh
-mv ./list_genres.json ../Website/data
-mv ./movies.json ../Website/data
-mv ./neighbors.npy ../Website/data
-mv ./rating.npy ../Website/data
+mv ./genres_contents.json ../Website/data
+mv ./genres_neighbors.npy ../Website/data
+mv ./movies_contents.json ../Website/data
+mv ./rating_neighbors.npy ../Website/data
 ```
 ### Chạy chương trình
 ```sh

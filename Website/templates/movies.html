@@ -75,7 +75,7 @@
                         {% for genre in items.genres %}
                             <li>
                                 <a href={{ genre.path }}>
-                                    <button type="button" class="btn btn-warning">{{ genre.genre }}</button>
+                                    <button type="button" class="btn btn-warning">{{ genre.value }}</button>
                                 </a>
                             </li>
                         {% endfor %}
@@ -83,7 +83,7 @@
                 </div>
                 <div class="col-md-4">
                     <h3>
-                        {{ rating }} / 5
+                        {{ items.rating }} / 5
                     </h3>
                 </div>
             </div>
@@ -129,7 +129,7 @@
                                 {% for genre in movie.genres %}
                                     <a href={{ genre.path }}>
                                         <button type="button" class="btn btn-primary">
-                                            {{ genre.genre }}
+                                            {{ genre.value }}
                                         </button>
                                     </a>
                                 {% endfor %}

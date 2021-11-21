@@ -58,7 +58,7 @@
                 {% for genre in genres %}
                     <li>
                         <a href={{ genre.path }}>
-                            <button type="button" class="btn btn-warning">{{ genre.genre }}</button>
+                            <button type="button" class="btn btn-warning">{{ genre.value }}</button>
                         </a>
                     </li>
                 {% endfor %}
@@ -82,7 +82,7 @@
                             {% for genre in item.genres %}
                                 <a href={{ genre.path }}>
                                     <button type="button" class="btn btn-primary">
-                                        {{ genre.genre }}
+                                        {{ genre.value }}
                                     </button>
                                 </a>
                             {% endfor %}
