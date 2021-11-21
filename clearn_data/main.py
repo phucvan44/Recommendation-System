@@ -77,7 +77,7 @@ class MoviesNearestNeighbors(Helper):
             self.print_progress(genre_idx, len(self.genres))
 
             self.movies[genre] = np.array([
-                1 if genre in movies.genres[idx] else 0 for idx in range(len(movies))
+                1 if genre in movies.genres[idx] else 0 for idx in range(min(len(movies), 3706))
             ])
 
         neighbors = self.nearest_neighbors()
